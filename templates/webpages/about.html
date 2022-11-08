@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-4">
+    {% for ab in about %}
+    <!-- Card 1 -->
+    <div class="card mb-3 animate__animated animate__tada" style="max-width: 160rem; background-color: rgba(0,0,0,0.5); color:#F7CD2E ;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ ab.photo.url }}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ab.title}}</h5>
+                    <p class="card-text">{{ab.desc}}</p>
+                    <p class="card-text"><small class="text-muted">{{ab.updated}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

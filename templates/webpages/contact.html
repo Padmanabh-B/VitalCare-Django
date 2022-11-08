@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="text-center text-white display-4  animate__animated animate__flipInX">
+        Contact Us
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="https://placeimg.com/640/480/tech" alt="">
+        </div>
+        <div class="col-6 mt-5">
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" name="fname" class="form-control" id="" aria-describedby="" placeholder="Enter Your Name">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="address" class="form-control" id="" aria-describedby="" placeholder="Enter Your Address">
+                </div>
+                <div class="mb-3">
+                    <input type="email"name="email"  class="form-control" id="" aria-describedby="" placeholder="Enter Your E-mail">
+                </div>
+                <div class="mb-3">
+                    <input type="number"name="phone"  class="form-control" id="" aria-describedby="" placeholder="Enter Your Phone">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="message" class="form-control" id="" aria-describedby="" placeholder="Enter Your Message">
+                </div>
+
+                <button type="submit" class="btn btn-warning">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

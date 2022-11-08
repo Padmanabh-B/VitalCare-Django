@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- Head Card -->
+{% for h in head %}
+<div class="card text-bg-dark">
+  <img src="{{h.photo.url}}" class="card-img " alt="...">
+  <div class="card-img-overlay">
+    <h5 class="card-title display-1 text-center">{{h.title}}</h5>
+    <p class="card-text text-center" style="font-size: 2rem;">{{h.desc}}</p>
+    <div class="container text-center">
+      <button type="button " class="btn btn-outline-warning">Visit Now</button>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+<!-- Cards -->
+<div class="container mt-4">
+    <div class="text-center display-4 text-white" style="background-color:#E07C24;">
+        <h1 class="animate__animated animate__flipInY">Top Hospitals</h1>
+    </div>
+</div>
+<div class="container mt-3">
+   <div class="row slider">
+    {% for c in card %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ c.photo.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{c.desc}}</p>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+   </div>
+</div>
+
+
+
+
+<!-- Emergency -->
+<div class="container">
+    <div class="text-center display-6 mt-3 mb-3 text-white animate__animated animate__flipInY" style="background-color:#E07C24;">
+        Emergency
+    </div>
+</div>
+<div class="container mt-3 mb-5">
+    <div class="card text-center">
+        {% for e in emg %}
+        <div class="card-body">
+          <h5 class="card-title">{{e.title}}</h5>
+          <p class="card-text">{{e.desc}}</p>
+          <a href="#" class="btn btn-warning">{{e.button_text}}</a>
+        </div>
+        {% endfor %}
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+</div>
+{% endblock %}

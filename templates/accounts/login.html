@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container rounded animate__animated animate__zoomInUp" style="background-color:#E07C24;">
+    <h1 class="text-white text-center mt-5" >Login Here</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6" >
+            <img src="{% static './assets/login.png' %}" alt="" style="width:25rem;">
+        </div>
+        <div class="col-6 mt-5" style="color:#F7CD2E ;">
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">User Name</label>
+                  <input type="text" name="username" class="form-control">
+                  
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" >
+                </div>
+                
+                <div class="d-grid  mt-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+
+                    <div class="container text-center">
+                        <hr>
+                        OR
+                        <hr>
+
+                    </div>
+                    <div class="container d-grid gap-1" >
+                        <button class="btn btn-secondary" type="button" style="background-color:#383CC1 ;"><i class="fa-brands fa-google me-3"></i>Login With Google</button>
+                    <button class="btn btn-secondary mt-3 mb-3" type="button" style="background-color: #383CC1" ><i class="fa-brands fa-github me-3"></i>Login With Github</button>
+                    </div>
+                  </div>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
